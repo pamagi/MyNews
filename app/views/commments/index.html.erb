@@ -1,0 +1,27 @@
+<h1>Listing commments</h1>
+
+<table>
+  <tr>
+    <th>Article</th>
+    <th>User</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @commments.each do |commment| %>
+  <tr>
+    <td><%= commment.article_id %></td>
+    <td><%= commment.user_id %></td>
+    <td><%= commment.body %></td>
+    <td><%= link_to 'Show', commment %></td>
+    <td><%= link_to 'Edit', edit_commment_path(commment) %></td>
+    <td><%= link_to 'Destroy', commment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Commment', new_commment_path %>
