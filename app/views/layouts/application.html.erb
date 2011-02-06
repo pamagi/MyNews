@@ -10,8 +10,15 @@
   <div id="header">
     <div id="menu">
       <ul>
-        <li class="current_page_item"><a href="#">Home</a></li>
-        <li><a href="#">Blog</a></li>
+        <li class="current_page_item"><%= link_to "Home", root_path %> </li>
+        <li><%= link_to "Articles", articles_path %> </li>
+        <% if user_signed_in? %>
+          <li><%= link_to "My Profile", user_path(current_user) %></li>
+          <li><%= link_to "Log out", destroy_user_session_path %></li>
+        <% else %>
+          <li><%= link_to "Registration", new_user_registration_path %></li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
         <li><a href="#">Photos</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Links</a></li>

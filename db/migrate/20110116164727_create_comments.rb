@@ -1,6 +1,6 @@
-class CreateCommments < ActiveRecord::Migration
+class CreateComments < ActiveRecord::Migration
   def self.up
-    create_table :commments do |t|
+    create_table :comments do |t|
       t.integer :article_id
       t.integer :user_id
       t.string :body
@@ -10,6 +10,6 @@ class CreateCommments < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :commments
+    drop_table :comments
   end
 end

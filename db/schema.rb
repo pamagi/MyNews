@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20110116171455) do
     t.datetime "updated_at"
   end
 
-  create_table "commments", :force => true do |t|
+  create_table "comments", :force => true do |t|
     t.integer  "article_id"
     t.integer  "user_id"
     t.string   "body"
@@ -43,11 +43,6 @@ ActiveRecord::Schema.define(:version => 20110116171455) do
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
