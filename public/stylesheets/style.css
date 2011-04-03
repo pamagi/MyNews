@@ -19,6 +19,7 @@ h1, h2, h3 {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-weight: normal;
 	color: #649632;
+        padding: 20px;
 }
 
 h1 { font-size: 44px; }
@@ -117,7 +118,6 @@ hr { display: none; }
 	float: left;
 	margin-right: 5px;
 	padding: 5px 12px 5px 28px;
-	background: url(/images/img06.gif) no-repeat left 50%;
 	text-decoration: none;
 	font: 14px Georgia, "Times New Roman", Times, serif;
 	color: #FFFFFF;

@@ -1,29 +1,15 @@
-<h1>Listing articles</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Category</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @articles.each do |article| %>
-  <tr>
-    <td><%= article.user_id %></td>
-    <td><%= article.title %></td>
-    <td><%= article.body %></td>
-    <td><%= article.category_id %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div class="post">
+    <h2 class="title"><%= article.title %></h2>
+    Category: <%= article.category.name %>
+    <p class="date"><%= article.created_at %></p>
+    <div class="entry">
+      <p><%= article.body %></p>
+      <p class="links"><%= link_to "Comments (#{article.comments.count})", article_path(article) %> <%= link_to 'Full article', article, :class => "permalink" %></p>
+    </div>
+    <%= link_to 'Edit', edit_article_path(article) if can? :update, article %> |
+    <%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete if can? :destroy, article %>
+  </div>
 <% end %>
-</table>
-
-<br />
 
 <%= link_to 'New Article', new_article_path %>

@@ -1,11 +1,13 @@
 Mynews::Application.routes.draw do
   devise_for :users, :controllers => {:sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords"}
 
-  resources :comments
+  resources :categories do
+    resources :articles, :only => [:index]
+  end
 
-  resources :categories
-
-  resources :articles
+  resources :articles do
+    resources :comments, :only => [:new, :create, :destroy]
+  end
 
   resources :users
 

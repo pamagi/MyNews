@@ -1,0 +1,5 @@
+<ul>
+  <% collection.each do |category| %>
+    <li><%= link_to category.name, category_articles_path(category) %></li>
+  <% end %>
+</ul>

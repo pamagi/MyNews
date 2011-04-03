@@ -53,35 +53,23 @@
 
       <%= yield %>
 
-      <div class="post">
-	<h2 class="title">Welcome to Blogging</h2>
-	<p class="date">01.23.09</p>
-	<div class="entry">
-	  <p>This is <strong>Blogging</strong>, a free, fully standards-compliant CSS template designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>, released for free under the <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> license. The photos in this design are from <a href="http://www.pdphoto.org/">PDPhoto.org</a>. You're free to use this template for anything as long as you link back to <a href="http://www.freecsstemplates.org/">my site</a>. Enjoy :)</p>
-	  <p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem.Sed lacus. Donec lectus. </p>
-	  <p class="links"><a href="#" class="comments">Comments (64)</a> &nbsp;&nbsp;&nbsp; <a href="#" class="permalink">Full article</a></p>
-	</div>
-      </div>
     </div>
     <!-- end #content -->
     <div id="sidebar">
       <ul>
-        <li>
-          <h2>Aliquam tempus</h2>
-          <p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, volutpat.</p>
-        </li>
+        <% unless user_signed_in? %>
+          <li>
+            <h2>Login</h2>
+            <%= render "users/sessions/new" %>
+          </li>
+        <% end %>
         <li id="calendar">
-          <h2>Calendar</h2>
+          <h2>Categories</h2>
+          <%= render "categories/list", :collection => Category.all %>
         </li>
         <li>
-          <h2>Turpis nulla</h2>
-          <ul>
-            <li><a href="#"></a><a href="#">Nec metus sed donec</a></li>
-            <li><a href="#">Magna lacus bibendum mauris</a></li>
-            <li><a href="#">Velit semper nisi molestie</a></li>
-            <li><a href="#">Eget tempor eget nonummy</a></li>
-            <li><a href="#">Nec metus sed donec</a></li>
-          </ul>
+          <h2>Latest articles</h2>
+          <%= render "articles/list", :collection => Article.all %>
         </li>
       </ul>
     </div>
@@ -91,7 +79,7 @@
   <!-- end #page -->
 
   <div id="footer">
-    <p>Copyright (c) 2008 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+    <p>Copyright (c) 2011 mynews.gr. All rights reserved.</p>
   </div>
   <!-- end #footer -->
 </body>

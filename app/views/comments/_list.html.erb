@@ -1,0 +1,10 @@
+<ul>
+  <% collection.each do |comment| %>
+    <li>
+      <%= comment.body %>
+      By <%= comment.user.nickname %>
+      at <%= comment.created_at %>
+      <%= link_to "Destroy", article_comment_path(comment.article, comment), :method => :delete if can? :destroy, comment %>
+    </li>
+  <% end %>
+</ul>

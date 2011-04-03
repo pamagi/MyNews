@@ -10,5 +10,10 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <b>My articles:</b>
+  <%= render "articles/list", :collection => @user.articles %>
+</p>
+
 <%= link_to 'Edit', edit_user_registration_path(@user) %> |
 <%= link_to 'Back', users_path %>
