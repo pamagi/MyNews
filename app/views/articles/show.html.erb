@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>User:</b>
+  <b>Χρήστης:</b>
   <%= link_to @article.user.nickname, user_path(@article.user) %>
 </p>
 
 <p>
-  <b>Title:</b>
+  <b>Τίτλος:</b>
   <%= @article.title %>
 </p>
 
 <p>
-  <b>Body:</b>
+  <b>Περιεχομένο:</b>
   <%= @article.body %>
 </p>
 
 <p>
-  <b>Category:</b>
+  <b>Κατηγορία:</b>
   <%= link_to @article.category.name, category_articles_path(@article.category) %>
 </p>
 
@@ -25,7 +25,7 @@
 <%= link_to 'Destroy', @article, :confirm => 'Are you sure?', :method => :delete if can? :destroy, @article %> |
 <%= link_to 'Back', articles_path %>
 
-<h1>Comments</h1>
+<h1>Σχόλια</h1>
 <%= render "comments/list", :collection => @article.comments %>
-<h1>Add comment</h1>
+<h1>Πρόσθεσε Σχόλιο</h1>
 <%= render "comments/form" %>

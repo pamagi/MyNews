@@ -1,7 +1,7 @@
 <% @articles.each do |article| %>
   <div class="post">
     <h2 class="title"><%= article.title %></h2>
-    Category: <%= article.category.name %>
+    Κατηγορία: <%= article.category.name %>
     <p class="date"><%= article.created_at %></p>
     <div class="entry">
       <p><%= article.body %></p>

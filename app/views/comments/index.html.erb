@@ -1,10 +1,10 @@
-<h1>Listing comments</h1>
+<h1>Λίστα Σχολίων</h1>
 
 <table>
   <tr>
-    <th>Article</th>
-    <th>User</th>
-    <th>Body</th>
+    <th>Άρθρο</th>
+    <th>Χρήστης</th>
+    <th>Περιεχόμενο</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,7 +17,7 @@
     <td><%= comment.body %></td>
     <td><%= link_to 'Show', comment %></td>
     <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', comment, :confirm => 'Επιβεβαίωση διαγραφής?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

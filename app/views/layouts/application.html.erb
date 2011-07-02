@@ -16,33 +16,29 @@
           <li><%= link_to "My Profile", user_path(current_user) %></li>
           <li><%= link_to "Log out", destroy_user_session_path %></li>
         <% else %>
-          <li><%= link_to "Registration", new_user_registration_path %></li>
           <li><%= link_to "Login", new_user_session_path %></li>
         <% end %>
-        <li><a href="#">Photos</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Links</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><%= link_to "Categories", categories_path %></li>       
+
       </ul>
     </div>
     <!-- end #menu -->
-    <div id="search">
+   <!-- <div id="search">
       <form method="get" action="">
         <fieldset>
           <input type="text" name="s" id="search-text" size="15" />
           <input type="submit" id="search-submit" value="Search" />
         </fieldset>
       </form>
-    </div>
+    </div> -->
     <!-- end #search -->
   </div>
   <!-- end #header -->
   
   <div id="logo">
-    <h1><a href="#">Blogging </a></h1>
-    <p><em> template design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></em></p>
+    
   </div>
-  <hr />
+ 
   <!-- end #logo -->
   <!-- end #header-wrapper -->
 
@@ -56,19 +52,20 @@
     </div>
     <!-- end #content -->
     <div id="sidebar">
+      
       <ul>
-        <% unless user_signed_in? %>
+       <% unless user_signed_in? %>
           <li>
-            <h2>Login</h2>
+            <h2>Σύνδεση</h2>
             <%= render "users/sessions/new" %>
           </li>
         <% end %>
         <li id="calendar">
-          <h2>Categories</h2>
+          <h2>Κατηγορίες</h2>
           <%= render "categories/list", :collection => Category.all %>
         </li>
         <li>
-          <h2>Latest articles</h2>
+          <h2>Τελευταία Άρθρα</h2>
           <%= render "articles/list", :collection => Article.all %>
         </li>
       </ul>
@@ -79,7 +76,7 @@
   <!-- end #page -->
 
   <div id="footer">
-    <p>Copyright (c) 2011 mynews.gr. All rights reserved.</p>
+    <p>Copyright (c) 2011 mynews.gr</p>
   </div>
   <!-- end #footer -->
 </body>

@@ -1,9 +1,4 @@
 
-/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
-*/
 
 body {
 	margin-top: 50px;
@@ -22,7 +17,7 @@ h1, h2, h3 {
         padding: 20px;
 }
 
-h1 { font-size: 44px; }
+h1 { font-size: 30px; }
 
 h2 { font-size: 20px; }
 
@@ -129,45 +124,6 @@ hr { display: none; }
 	color: #FFFFFF;
 }
 
-/* Search */
-
-#search {
-	float: right;
-	width: 305px;
-	height: 76px;
-}
-
-#search form {
-	float: right;
-	margin: 0;
-	padding: 25px 20px 0 0;
-}
-
-#search fieldset {
-	margin: 0;
-	padding: 0;
-	border: none;
-}
-
-#search input {
-	float: left;
-	font: 12px Georgia, "Times New Roman", Times, serif;
-	border: none;
-}
-
-#search-text {
-	width: 135px;
-	height: 18px;
-	padding: 3px 0 0 5px;
-	background: #ECF9E4;
-	color: #658453;
-}
-
-#search-submit {
-	height: 21px;
-	margin-left: 12px;
-	color: #39561D;
-}
 
 /* Page */
 
