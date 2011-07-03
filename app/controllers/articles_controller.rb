@@ -30,6 +30,7 @@ class ArticlesController < ApplicationController
 
   # POST /articles
   def create
+    @article = Article.create( params[:article] ) 	
     @article = current_user.articles.build(params[:article])
     respond_with(@article.tap(&:save))
   end

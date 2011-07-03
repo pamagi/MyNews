@@ -1,29 +1,33 @@
-<%= form_for(@article) do |f| %>
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+<%= form_for(@article, :html => {:multipart=>true}) do |f| %>
+<% if @article.errors.any? %>
+<div id="error_explanation">
+<h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-      <ul>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<ul>
+<% @article.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :title, "Τίτλος" %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body, "Περιεχόμενο" %><br />
-    <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :category, "Κατηγορία" %><br />
-    <%= f.select :category_id, Category.all.collect { |c| [c.name, c.id] } %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Αποστολή" %>
-  </div>
+<div class="field">
+<%= f.label :picture, "Picture" %><br />
+<%= f.file_field :picture %>
+</div>
+<div class="field">
+<%= f.label :title, "Τίτλος" %><br />
+<%= f.text_field :title %>
+</div>
+<div class="field">
+<%= f.label :body, "Περιεχόμενο" %><br />
+<%= f.text_area :body %>
+</div>
+<div class="field">
+<%= f.label :category, "Κατηγορία" %><br />
+<%= f.select :category_id, Category.all.collect { |c| [c.name, c.id] } %>
+</div>
+<div class="actions">
+<%= f.submit "Αποστολή" %>
+</div>
 <% end %>

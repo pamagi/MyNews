@@ -1,6 +1,9 @@
 <h1>Επεξεργασία Άρθρου</h1>
 
 <%= render 'form' %>
+<% form_for :article, @article, :url => article_path, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :picture %>
+<% end %>
 
 <%= link_to 'Show', @article %> |
 <%= link_to 'Back', articles_path %>
