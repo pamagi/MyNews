@@ -4,7 +4,7 @@
     Κατηγορία: <%= article.category.name %>
     <p class="date"><%= article.created_at %></p>
     <div class="entry">
-      <p><%= article.picture.url(:medium) %><%= article.body %></p>
+      <p><%= image_tag @article.picture.url(:medium) %><%= article.body %></p>
       <p class="links"><%= link_to "Comments (#{article.comments.count})", article_path(article) %> <%= link_to 'Full article', article, :class => "permalink" %></p>
     </div>
     <%= link_to 'Edit', edit_article_path(article) if can? :update, article %> |
