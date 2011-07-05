@@ -12,8 +12,12 @@
 
 <p>
   <b>Περιεχομένο:</b>
-  <%= image_tag @article.picture.url(:medium) %> 
-  <%= @article.body %>
+  <table width=400>
+    <tr>
+     <td> <%= image_tag @article.picture.url(:medium) %></td>
+     <td> <%= @article.body %></td>
+    </tr>
+  </table>
 </p>
 
 <p>

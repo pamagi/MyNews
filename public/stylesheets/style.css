@@ -17,7 +17,7 @@ h1, h2, h3 {
         padding: 20px;
 }
 
-h1 { font-size: 30px; }
+h1 { font-size: 20px; }
 
 h2 { font-size: 20px; }
 
@@ -28,9 +28,9 @@ p, ul, ol {
 	line-height: 240%;
 	text-align: justify;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 11px;
+	font-size: 14px;
 }
-
+td{ font-size:14px;font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;text-align: justify;color:#080707;}
 ul, ol { }
 
 blockquote { }
@@ -175,8 +175,10 @@ padding-top: 70px; }
 /* Content */
 
 #content {
+        margin-top:0px;
 	float: right;
 	width: 600px;
+        
 }
 
 /* Post */
@@ -200,7 +202,7 @@ padding-top: 70px; }
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-weight: normal;
 	font-size: 18px;
-	color: #F1B566;
+	color: #121111;
 }
 
 .post .meta {
@@ -215,7 +217,9 @@ padding-top: 70px; }
 .post .meta a { color: #B6ACA2; }
 
 .post .entry {
+        
 	padding: 25px 20px 0px 20px;
+		
 }
 
 .post .links {

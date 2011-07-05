@@ -18,8 +18,8 @@
         <% else %>
           <li><%= link_to "Login", new_user_session_path %></li>
         <% end %>
-        <li><%= link_to "Categories", categories_path %></li>       
-
+        <li><%= link_to "Categories", categories_path %></li> 
+        
       </ul>
     </div>
     <!-- end #menu -->
@@ -46,9 +46,7 @@
     <div id="content">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-
       <%= yield %>
-
     </div>
     <!-- end #content -->
     <div id="sidebar">
@@ -60,6 +58,10 @@
             <%= render "users/sessions/new" %>
           </li>
         <% end %>
+        <li>
+          <h2>New Article</h2>
+          <a href="/articles/new">Create</a>
+        </li>
         <li id="calendar">
           <h2>Κατηγορίες</h2>
           <%= render "categories/list", :collection => Category.all %>

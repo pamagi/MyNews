@@ -1,15 +1,24 @@
 <% @articles.each do |article| %>
   <div class="post">
     <h2 class="title"><%= article.title %></h2>
-    Κατηγορία: <%= article.category.name %>
+    <b>Κατηγορία:</b> <%= article.category.name %>
     <p class="date"><%= article.created_at %></p>
     <div class="entry">
-      <p><%= image_tag @article.picture.url(:medium) %><%= article.body %></p>
-      <p class="links"><%= link_to "Comments (#{article.comments.count})", article_path(article) %> <%= link_to 'Full article', article, :class => "permalink" %></p>
+      <table>
+       <tr>
+         <td>
+            <%= image_tag article.picture.url(:thumb) %>
+         </td>
+         <td>
+         <dl>
+          <dd><font color="#524B4D" size="3"><%= truncate(strip_tags(article.body),:length => 200) %></font></dd>
+         </dl>
+         </td>
+       </tr>
+      </table>
+   <p class="links"><%= link_to "Comments (#{article.comments.count})", article_path(article) %> <%= link_to 'Full article', article, :class => "permalink" %></p>
     </div>
     <%= link_to 'Edit', edit_article_path(article) if can? :update, article %> |
     <%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete if can? :destroy, article %>
   </div>
 <% end %>
-
-<%= link_to 'New Article', new_article_path %>
