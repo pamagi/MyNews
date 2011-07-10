@@ -11,7 +11,9 @@
     <div id="menu">
       <ul>
         <li class="current_page_item"><%= link_to "Home", root_path %> </li>
-        <li><%= link_to "Articles", articles_path %> </li>
+        <li><%= link_to "Articles", articles_path %> 
+	
+        </li>
         <% if user_signed_in? %>
           <li><%= link_to "My Profile", user_path(current_user) %></li>
           <li><%= link_to "Log out", destroy_user_session_path %></li>

@@ -1,23 +1,15 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Χρήστης:</b>
-  <%= link_to @article.user.nickname, user_path(@article.user) %>
+<p font-size="25px">
+  <font color="green" size="5px"><i><%= @article.title %></i></font>
 </p>
+<div>
+ <%= image_tag @article.picture.url(:medium), :align => "left", :style => "padding-right:10px"%>
+ <p><font color="#524B4D" size="3"><%= @article.body %></font></p>
+</div>
 
 <p>
-  <b>Τίτλος:</b>
-  <%= @article.title %>
-</p>
-
-<p>
-  <b>Περιεχομένο:</b>
-  <table width=400>
-    <tr>
-     <td> <%= image_tag @article.picture.url(:medium) %></td>
-     <td> <%= @article.body %></td>
-    </tr>
-  </table>
+  <b>Δημιουργήθηκε από:</b>
+  <%= @article.user.nickname %>
 </p>
 
 <p>
@@ -25,12 +17,12 @@
   <%= link_to @article.category.name, category_articles_path(@article.category) %>
 </p>
 
+<%= link_to 'Επεξεργασία', edit_article_path(@article) if can? :update, @article %> |
+<%= link_to 'Διαγραφή', @article, :confirm => 'Είσαι βέβαιος?', :method => :delete if can? :destroy, @article %> |
+<%= link_to 'Πίσω', articles_path %>
 
-<%= link_to 'Edit', edit_article_path(@article) if can? :update, @article %> |
-<%= link_to 'Destroy', @article, :confirm => 'Are you sure?', :method => :delete if can? :destroy, @article %> |
-<%= link_to 'Back', articles_path %>
-
-<h1>Σχόλια</h1>
+<p><font color="green" size="3">Σχόλια</font></p>
 <%= render "comments/list", :collection => @article.comments %>
-<h1>Πρόσθεσε Σχόλιο</h1>
+<p><font color="green" size="3">Πρόσθεσε Σχόλιο</font></p>
 <%= render "comments/form" %>
+

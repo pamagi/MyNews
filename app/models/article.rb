@@ -2,14 +2,15 @@ class Article < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many :comments
-  has_attached_file :picture, :styles => { :medium => "200x200>", :thumb => "100x100>" }
+  has_attached_file :picture, :styles => { :medium => "400x400>", :thumb => "100x100>" }
   default_scope order("created_at DESC")
 
+  validates :picture, :presence => true
   validates :title, :presence => true, :uniqueness => true, :length => { :minimum => 3, :maximum => 40 }
-  validates :body, :presence => true, :uniqueness => true, :length => { :minimum => 3, :maximum => 1000 }
+  validates :body, :presence => true, :uniqueness => true, :length => { :minimum => 40, :maximum => 1000 }
   validates :category, :presence => true
   validates :user, :presence => true
-
+  
   def visible_to?(user)
     true
   end
