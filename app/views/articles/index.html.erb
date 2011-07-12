@@ -2,7 +2,7 @@
   <div class="post">
     <h2 class="title"><%= article.title %></h2>
     <b>Κατηγορία:</b> <%= article.category.name %>
-    <p class="date"><%= article.created_at %></p>
+    <p class="date"><%= article.created_at.to_s(:long) %></p>
     <div class="entry">
       <table>
        <tr>
