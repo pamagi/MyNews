@@ -22,3 +22,4 @@
     <%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete if can? :destroy, article %>
   </div>
 <% end %>
+<%= paginate @articles %> 

@@ -1,0 +1,8 @@
+gr:
+  views:
+    pagination:
+      previous: "&laquo; Προηγούμενο"
+      next: "Επόμενο &raquo;"
+      truncate: "..."
+      first: " Arxi"
+      last: "telos" 

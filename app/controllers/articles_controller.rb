@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   
   # GET /articles
   def index
-    @articles = collection
+    @articles = Kaminari.paginate_array(collection).page(params[:page]).per(6) 
     respond_with(@articles)
   end
 

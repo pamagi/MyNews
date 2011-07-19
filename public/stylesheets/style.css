@@ -345,3 +345,8 @@ padding-top: 70px; }
 #footer a {
 	color: #F1B566;
 }
+#comments {
+    	border-bottom: 3px dashed #333333;
+    	margin-bottom: 20px;
+    	padding: 10px 0;
+}

@@ -4,6 +4,7 @@ class Comment < ActiveRecord::Base
 
   validates :user, :presence => true
   validates :article, :presence => true
+  validates :body, :presence => true, :length => { :maximum => 500 }
 
   def visible_to?(user)
     true

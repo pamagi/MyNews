@@ -1,10 +1,18 @@
-<ul>
+<% if @article.comments.count == 0 %>
+<p>Δεν υπάρχουν ακόμα σχόλια για αυτό το άρθρο.</br> Γράψτε τα δικά σας σχόλια στην παρακάτω φόρμα! </p>
+<% else %>
+<div style="background-color:#EDE7E4"><ul>
   <% collection.each do |comment| %>
-    <li>
-      <%= comment.body %>
-      Δημιουργήθηκε από: <%= comment.user.nickname %>
-      Στις: <%= comment.created_at %>
-      <%= link_to "Destroy", article_comment_path(comment.article, comment), :method => :delete if can? :destroy, comment %>
+    <div id="comments"> 	
+    <li type="1">
+      
+      <p><%= comment.body %></br>
+      <b>Δημιουργήθηκε από:</b> <%= comment.user.nickname %>
+      <b>Στις: </b><%= comment.created_at.to_s(:short) %></br>
+      <%= link_to "Διαγραφή", article_comment_path(comment.article, comment), :method => :delete if can? :destroy, comment %></p>
+      
     </li>
+    </div>	
   <% end %>
-</ul>
+</ul></div>
+<% end %>

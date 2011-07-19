@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   respond_to :html
-  before_filter :authenticate_user!, :except => [:create, :destroy]
+  before_filter :authenticate_user! 
 
   def create
     article = Article.find(params[:article_id])
