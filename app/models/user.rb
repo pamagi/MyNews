@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   
   has_many :articles
   has_many :comments
-
+ 
   validates :nickname, :presence => true, :uniqueness => true, :length => { :minimum => 3, :maximum => 15 }
 
   def admin?

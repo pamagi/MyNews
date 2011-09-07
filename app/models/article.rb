@@ -3,6 +3,7 @@ class Article < ActiveRecord::Base
   belongs_to :category
   has_many :comments
   has_attached_file :picture, :styles => { :medium => "400x400>", :thumb => "100x100>" }
+  
   default_scope order("created_at DESC")
 
   
@@ -26,4 +27,5 @@ class Article < ActiveRecord::Base
   def deletable_by?(user)
     user.present? and (self.user == user or user.admin?)
   end
+  
 end

@@ -7,9 +7,11 @@ Mynews::Application.routes.draw do
 
   resources :articles do
     resources :comments, :only => [:new, :create, :destroy]
+   
   end
 
   resources :users
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
