@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Επεξεργασία <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -9,20 +9,20 @@
   <p><%= f.label :nickname %><br />
   <%= f.text_field :nickname %></p>
 
-  <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <p><%= f.label :password %> <i>(να μην συμπληρωθεί αν δεν θες να το αλλάξεις)</i><br />
   <%= f.password_field :password %></p>
 
   <p><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></p>
 
-  <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <p><%= f.label :current_password %> <i>(χρειάζεται ο κωδικός σου για να επιβεβαιωθούν οι αλλαγές)</i><br />
   <%= f.password_field :current_password %></p>
 
-  <p><%= f.submit "Update" %></p>
+  <p><%= f.submit "Ενημέρωση" %></p>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Διαγραφή λογαριασμού</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+<p>Μη ευχαριστημένος? <%= link_to "Διαγραφή Λογαριασμού", registration_path(resource_name), :confirm => "Είσαι βέβαιος?", :method => :delete %>.</p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Πίσω", :back %>

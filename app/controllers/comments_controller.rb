@@ -7,9 +7,9 @@ class CommentsController < ApplicationController
     @comment = article.comments.build(params[:comment])
     @comment.user = current_user
     if @comment.save
-      redirect_to(@comment.article, :notice => 'Comment was successfully created.')
+      redirect_to(@comment.article, :notice => 'Το σχόλιο αποθηκέυτηκε με επιτυχία.')
     else
-      redirect_to(@comment.article, :notice => "Comment wasn't successfully created")
+      redirect_to(@comment.article, :notice => "Το σχόλιο δεν αποθηκέυτηκε")
     end
   end
 

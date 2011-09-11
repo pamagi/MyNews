@@ -1,7 +1,7 @@
 <%= form_for(@article, :html => {:multipart=>true}) do |f| %>
 <% if @article.errors.any? %>
 <div id="error_explanation">
-<h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+<h2><%= pluralize(@article.errors.count, "error") %> είναι αδύνατη η αποθήκευση του άρθρου:</h2>
 
 <ul>
 <% @article.errors.full_messages.each do |msg| %>
@@ -11,13 +11,14 @@
 </div>
 <% end %>
 
-<div class="field">
-<%= f.label :picture, "Picture" %><br />
-<%= f.file_field :picture %>
-</div>
+
 <div class="field">
 <%= f.label :title, "Τίτλος" %><br />
 <%= f.text_field :title %>
+</div>
+<div class="field">
+<%= f.label :picture, "Εικόνα" %><br />
+<%= f.file_field :picture %>
 </div>
 <div class="field">
 <%= f.label :body, "Περιεχόμενο" %><br />

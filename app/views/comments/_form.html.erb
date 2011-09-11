@@ -1,7 +1,7 @@
 <%= form_for [@article, Comment.new] do |f| %>
   <% if f.object.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(f.object.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <h2><%= pluralize(f.object.errors.count, "λάθη") %> εμπόδισαν την αποθήκευση αυτού του σχολίου:</h2>
 
       <ul>
       <% f.object.errors.full_messages.each do |msg| %>

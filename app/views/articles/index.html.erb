@@ -16,10 +16,10 @@
          </td>
        </tr>
       </table>
-   <p class="links"><%= link_to "Comments (#{article.comments.count})", article_path(article) %> <%= link_to 'Full article', article, :class => "permalink" %></p>
+   <p class="links"><%= link_to "Σχόλια (#{article.comments.count})", article_path(article) %> <%= link_to 'Περισσότερα...', article, :class => "permalink" %></p>
     </div>
-    <%= link_to 'Edit', edit_article_path(article) if can? :update, article %> |
-    <%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete if can? :destroy, article %>
+    <%= link_to 'Επεξεργασία', edit_article_path(article) if can? :update, article %> |
+    <%= link_to 'Διαγραφή', article, :confirm => 'Είσαι βέβαιος?', :method => :delete if can? :destroy, article %>
   </div>
 <% end %>
 <%= paginate @articles %> 

@@ -1,39 +1,39 @@
 gr:
   errors:
     messages:
-      not_found: "δεν βρεθηκε"
-      already_confirmed: "was already confirmed"
-      not_locked: "was not locked"
+      not_found: "δεν βρέθηκε"
+      already_confirmed: "έχει επιβεβαιωθεί ήδη"
+      not_locked: "δεν είναι κλειδωμένο"
 
   devise:
     failure:
-      unauthenticated: 'You need to sign in or sign up before continuing.'
-      unconfirmed: 'You have to confirm your account before continuing.'
-      locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
-      invalid_token: 'Invalid authentication token.'
-      timeout: 'Your session expired, please sign in again to continue.'
-      inactive: 'Your account was not activated yet.'
+      unauthenticated: 'Χρειάζεται να συνδεθείς ή να εγγραφείς πριν συνεχίσεις.'
+      unconfirmed: 'Χρειάζεται να επιβαιβεώσεις τον λογαριασμό σου πριν συνεχίσεις.'
+      locked: 'Ο λογαριασμός είναι κλειδωμένος.'
+      invalid: 'Άκυρο email ή password.'
+      invalid_token: 'Άκυρο authentication token.'
+      timeout: 'Η συνεδρία σας έληξε, παρακαλώ συνδεθείτε ξανά.'
+      inactive: 'Ο λογαριασμός σας δεν έχει ενεργοποιηθεί ακόμα.'
     sessions:
-      signed_in: 'Signed in successfully.'
-      signed_out: 'Αποσυνδεθηκες με επιτυχία.'
+      signed_in: 'Συνδεθήκατε με επιτυχία.'
+      signed_out: 'Αποσυνδεθήκατε με επιτυχία.'
     passwords:
-      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
-      updated: 'Your password was changed successfully. You are now signed in.'
+      send_instructions: 'Θα λάβεις ένα email με οδηγίες για την αλλαγή του password σε λίγα λεπτά.'
+      updated: 'Το password  άλλαξε με επιτυχία. Είσαι συνδεδεμένος.'
     confirmations:
-      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      send_instructions: 'Θα λάβεις ένα email με οδηγίες για επιβαεβαίωση του λογαριασμού σε λίγα λεπτά.'
       confirmed: 'Your account was successfully confirmed. You are now signed in.'
     registrations:
-      signed_up: 'You have signed up successfully. If enabled, a confirmation was sent to your e-mail.'
-      updated: 'You updated your account successfully.'
-      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+      signed_up: 'Έχεις εγγραφεί με επιτυχία.'
+      updated: 'Ενημέρωσες με επιτυχία τον λογαριασμό σου.'
+      destroyed: 'Αντίο! Ο λογαριασμός σου διαγράφηκε με επιτυχία. Ελπίζουμε να συμμετέχεις ξανά σύντομα στον ιστότοπό μας.'
     unlocks:
-      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
-      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+      send_instructions: 'Θα λάβεις ένα email με οδηγίες για το πως θα ξεκλειδώσεις τον λογαριασμό σου σε λίγα λεπτά.'
+      unlocked: 'Ο λογαριασμός σου ξεκλειδώθηκε με επιτυχία. Είσαι συνδεδεμένος.'
     mailer:
       confirmation_instructions:
-        subject: 'Confirmation instructions'
+        subject: 'Οδηγίες επιβαιβέωσης'
       reset_password_instructions:
-        subject: 'Reset password instructions'
+        subject: 'Οδηγίες αλλαγής password'
       unlock_instructions:
-        subject: 'Unlock Instructions'
+        subject: 'Οδηγίες ξεκλειδώματος'

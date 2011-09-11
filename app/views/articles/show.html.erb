@@ -17,8 +17,8 @@
   <%= link_to @article.category.name, category_articles_path(@article.category) %>
 </p>
 
-<%= link_to 'Επεξεργασία', edit_article_path(@article) if can? :update, @article %> |
-<%= link_to 'Διαγραφή', @article, :confirm => 'Είσαι βέβαιος?', :method => :delete if can? :destroy, @article %> |
+<%= link_to 'Επεξεργασία', edit_article_path(@article) if can? :update, @article %> 
+<%= link_to 'Διαγραφή', @article, :confirm => 'Είσαι βέβαιος?', :method => :delete if can? :destroy, @article %> 
 <%= link_to 'Πίσω', articles_path %>
 
 <p><font color="green" size="3">Σχόλια</font></p>

@@ -15,13 +15,13 @@
     <td><%= comment.article_id %></td>
     <td><%= comment.user_id %></td>
     <td><%= comment.body %></td>
-    <td><%= link_to 'Show', comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, :confirm => 'Επιβεβαίωση διαγραφής?', :method => :delete %></td>
+    <td><%= link_to 'Ανάγνωση', comment %></td>
+    <td><%= link_to 'Επεξεργασία', edit_comment_path(comment) %></td>
+    <td><%= link_to 'Διαγραφή', comment, :confirm => 'Είσαι βέβαιος?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Comment', new_comment_path %>
+<%= link_to 'Νέο Σχόλιο', new_comment_path %>

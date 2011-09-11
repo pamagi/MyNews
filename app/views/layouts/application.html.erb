@@ -10,30 +10,20 @@
   <div id="header">
     <div id="menu">
       <ul>
-        <li class="current_page_item"><%= link_to "Home", root_path %> </li>
-        <li><%= link_to "Articles", articles_path %> 
-	
-        </li>
+        <li class="current_page_item"><%= link_to "Αρχική", root_path %> </li>
+        
         <% if user_signed_in? %>
-          <li><%= link_to "My Profile", user_path(current_user) %></li>
-          <li><%= link_to "Log out", destroy_user_session_path %></li>
+          <li><%= link_to "Προφίλ", user_path(current_user) %></li>
+          <li><%= link_to "Αποσύνδεση", destroy_user_session_path %></li>
         <% else %>
-          <li><%= link_to "Login", new_user_session_path %></li>
+          <li><%= link_to "Σύνδεση", new_user_session_path %></li>
         <% end %>
-        <li><%= link_to "Categories", categories_path %></li> 
+        <li><%= link_to "Νέο Άρθρο", new_article_path %></li> 
         
       </ul>
     </div>
     <!-- end #menu -->
-   <!-- <div id="search">
-      <form method="get" action="">
-        <fieldset>
-          <input type="text" name="s" id="search-text" size="15" />
-          <input type="submit" id="search-submit" value="Search" />
-        </fieldset>
-      </form>
-    </div> -->
-    <!-- end #search -->
+   
   </div>
   <!-- end #header -->
   
@@ -61,16 +51,16 @@
           </li>
         <% end %>
         <li>
-          <h2>New Article</h2>
-          <img src="/images/write1new.png" align="left"/><a href="/articles/new">Create new articles for your own issues</a>
+          <h2>Νέο Άρθρο</h2>
+          <img src="/images/write1new.png" align="left"/><a href="/articles/new">Δημιουργήστε τα δικά σας άρθρα για την επικαιρότητα</a>
         </li>
         <li id="calendar">
           <h2>Κατηγορίες</h2>
           <%= render "categories/list", :collection => Category.all %>
         </li>
         <li>
-          <h2>Τελευταία Άρθρα</h2>
-          <%= render "articles/list", :collection => Article.all %>
+          <h2>Άρθρα που σχολιάστηκαν</h2>
+          <%= render "articles/list", :collection => Article.most_commented %>
         </li>
       </ul>
     </div>

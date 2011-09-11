@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
   
   default_scope order("created_at DESC")
 
-  
+  scope :most_commented, reorder("(SELECT COUNT(*) FROM comments WHERE comments.article_id = articles.id) DESC")
 
   validates_attachment_presence :picture
   validates_attachment_size :picture, :less_than => 5.megabytes
@@ -27,5 +27,6 @@ class Article < ActiveRecord::Base
   def deletable_by?(user)
     user.present? and (self.user == user or user.admin?)
   end
+  
   
 end

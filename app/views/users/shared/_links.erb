@@ -1,11 +1,9 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Sign in", new_user_session_path %><br />
+  <%= link_to "Σύνδεση", new_user_session_path %><br />
 <% end -%>
 
 <%- if controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_user_registration_path %><br />
+  <%= link_to "Εγγραφή", new_user_registration_path %><br />
 <% end -%>
 
-<%- if controller_name != 'passwords' %>
-  <%= link_to "Forgot your password?", new_user_password_path %><br />
-<% end -%>
+
