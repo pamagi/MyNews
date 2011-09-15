@@ -6,11 +6,10 @@ class CommentsController < ApplicationController
     article = Article.find(params[:article_id])
     @comment = article.comments.build(params[:comment])
     @comment.user = current_user
-    if @comment.save
-      redirect_to(@comment.article, :notice => 'Commment was success')
-    else
-      redirect_to(@comment.article, :notice => "Commment was not success")
-    end
+    respond_with(@comment.tap(&:save), :location => article) do |format|
+format.html { redirect_to article }
+
+
   end
 
   # DELETE /comments/1
