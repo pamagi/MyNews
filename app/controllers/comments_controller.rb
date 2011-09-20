@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment = article.comments.build(params[:comment])
     @comment.user = current_user
     respond_with(@comment.tap(&:save), :location => article) do |format|
-format.html { redirect_to article }
+    format.html {redirect_to article}
 
 
   end

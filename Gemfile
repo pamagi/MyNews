@@ -7,3 +7,4 @@ gem "devise"
 gem "cancan"
 gem "paperclip", "~> 2.3"
 gem 'kaminari'
+gem 'rails-i18n'

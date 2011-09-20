@@ -67,6 +67,8 @@ GEM
       activesupport (= 3.0.4)
       bundler (~> 1.0)
       railties (= 3.0.4)
+    rails-i18n (0.1.8)
+      i18n (~> 0.5)
     railties (3.0.4)
       actionpack (= 3.0.4)
       activesupport (= 3.0.4)
@@ -92,4 +94,5 @@ DEPENDENCIES
   kaminari
   paperclip (~> 2.3)
   rails (= 3.0.4)
+  rails-i18n
   sqlite3-ruby
