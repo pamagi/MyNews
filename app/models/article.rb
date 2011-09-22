@@ -12,7 +12,7 @@ class Article < ActiveRecord::Base
   validates_attachment_size :picture, :less_than => 5.megabytes
   validates_attachment_content_type :picture, :content_type => ['image/jpeg', 'image/png']
   validates :title, :presence => true, :uniqueness => true, :length => { :minimum => 3, :maximum => 40 }
-  validates :body, :presence => true, :uniqueness => true, :length => { :minimum => 40, :maximum => 1000 }
+  validates :body, :presence => true, :uniqueness => true, :length => { :minimum => 40, :maximum => 3000 }
   validates :category, :presence => true
   validates :user, :presence => true
   
