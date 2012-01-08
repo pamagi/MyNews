@@ -1,4 +1,4 @@
-<h2>Επεξεργασία <%= resource_name.to_s.humanize %></h2>
+<h2>Επεξεργασία Λογαριασμού <%= current_user.nickname %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -9,13 +9,13 @@
   <p><%= f.label :nickname %><br />
   <%= f.text_field :nickname %></p>
 
-  <p><%= f.label :password %> <i>(να μην συμπληρωθεί αν δεν θες να το αλλάξεις)</i><br />
+  <p><%= f.label :password, "Νέο password" %> <i>(να μην συμπληρωθεί αν δεν θες να το αλλάξεις)</i><br />
   <%= f.password_field :password %></p>
 
-  <p><%= f.label :password_confirmation %><br />
+  <p><%= f.label :password_confirmation, "Επιβεβαίωση password" %><br />
   <%= f.password_field :password_confirmation %></p>
 
-  <p><%= f.label :current_password %> <i>(χρειάζεται ο κωδικός σου για να επιβεβαιωθούν οι αλλαγές)</i><br />
+  <p><%= f.label :current_password, "Παλιό password" %> <i>(χρειάζεται ο κωδικός σου για να επιβεβαιωθούν οι αλλαγές)</i><br/>
   <%= f.password_field :current_password %></p>
 
   <p><%= f.submit "Ενημέρωση" %></p>

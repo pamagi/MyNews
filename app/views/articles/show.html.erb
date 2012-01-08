@@ -21,9 +21,11 @@
 <%= link_to 'Διαγραφή', @article, :confirm => 'Είσαι βέβαιος?', :method => :delete if can? :destroy, @article %> 
 <%= link_to 'Πίσω', articles_path %>
 
+<p><font color="green" size="3">Νέο Σχόλιο</font></p>
+<%= render "comments/form" %>
+
 <p><font color="green" size="3">Σχόλια</font></p>
 <%= render "comments/list", :collection => @article.comments %>
 
-<p><font color="green" size="3">Νέο Σχόλιο</font></p>
-<%= render "comments/form" %>
+
 

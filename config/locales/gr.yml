@@ -211,7 +211,7 @@ gr:
       less_than_or_equal_to: "πρέπει να είναι λιγότερο ή ίσο με %{count}"
       odd: "πρέπει να είναι περιττός"
       even: "πρέπει να είναι άρτιος"
-
+      not_saved: "δεν αποθηκεύτηκε"
   activerecord:
     errors:
       template:

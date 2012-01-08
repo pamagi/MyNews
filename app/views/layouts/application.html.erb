@@ -17,6 +17,7 @@
           <li><%= link_to "Αποσύνδεση", destroy_user_session_path %></li>
         <% else %>
           <li><%= link_to "Σύνδεση", new_user_session_path %></li>
+          <li><%= link_to "Εγγραφή", new_user_registration_path %></li>
         <% end %>
         <li><%= link_to "Νέο Άρθρο", new_article_path %></li> 
         

@@ -8,7 +8,7 @@
       
       <p><%= comment.body %></br>
       <b>Δημιουργήθηκε από:</b> <%= comment.user.nickname %>
-      <b>Στις: </b><%= comment.created_at.to_s(:short) %></br>
+      <b>Στις: </b><%= I18n.l(comment.created_at, :format => :short) %></br>
       <%= link_to "Διαγραφή", article_comment_path(comment.article, comment), :method => :delete if can? :destroy, comment %></p>
       
     </li>
@@ -16,3 +16,6 @@
   <% end %>
 </ul></div>
 <% end %>
+
+
+
